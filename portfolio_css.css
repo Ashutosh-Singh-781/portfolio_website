@@ -924,45 +924,420 @@ input:focus, textarea:focus {
         margin-top: 5%;
     }
 }
+/* ==========================================================================
+   FINAL FULLY ADJUSTED MOBILE RESPONSIVE BLOCK (768PX)
+   ========================================================================== */
+/* ==========================================================================
+   FINAL FULLY ADJUSTED MOBILE RESPONSIVE MASTER BLOCK (768PX)
+   ========================================================================== */
 @media(max-width:768px) {
-    header { padding: 1rem 0.1rem; }
-    nav { display: none; }
-    .header h1 { font-size: 2rem; }
-    .btn-contact { padding: 0.6rem 1.5rem; }
+    /* Header & Contact Button Adjustments */
+    header { 
+        padding: 15px 20px; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav { 
+        display: none; 
+    }
+    header h1 { 
+        font-size: 1.5rem; 
+    }
+    .btn-contact { 
+        padding: 0.4rem 1.2rem; 
+        font-size: 0.9rem;
+    }
+
+    /* Container Dynamic Padding */
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    /* Hero Section Reset */
+    main {
+        min-height: auto;
+        padding-top: 10px;
+    }
     .content {
-        margin-top: 30rem;
-        max-width: 30rem;
-        margin-left: 10%;
+        margin-top: 20px; 
+        max-width: 100%;
+        margin-left: 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
+
+    /* Texts Formatting */
+    .intro {
+        margin-top: 20px;
+        font-size: 1.3rem;
+    }
+    .name { 
+        font-size: 2.2rem; 
+        line-height: 1.2;
+        margin-top: 5px;
+    }
+    .txttype { 
+        font-size: 1.2rem; 
+    }
+    .texttype {
+        font-size: 1.8rem; 
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    /* 3D Model Flow Correction & Height Fix */
     .model3d {
-        scale: 0.5;
-        top: -20%;
-        opacity: 0.5;
-        filter: drop-shadow(0px 0px 40px rgb(199, 81, 8));
-        border-radius: 90px;
-        clip-path: rect(20%,100%,92%,100%);
+        position: relative; 
+        width: 100%;
+        height: 480px; 
+        display: block;
+        margin: 10px auto 0 auto; 
+        opacity: 0.9;
+        scale: 1.15;
+        top: 0;
+        right: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 85%);
+        order: -1; 
+        /* box-shadow: 0px -10px 30px rgba(223, 137, 8, 0.4),  /* Top shadow */
+                    /* 1px 15px 40px rgba(255, 123, 7, 0.505);   Bottom cut shadow for orange integration */
+        /* filter: drop-shadow(0px 10px 20px rgba(200, 104, 7, 0.91)); */ */
     }
-    .name { font-size: 2.0rem; }
-    .intro { font-size: 1.5rem; }
+
+    /* Buttons Tag-box Alignment */
+    .tag-box {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .about {
+        margin-top: 0; 
+    }
+    .downcv {
+        margin-left: 0; 
+    }
+
+    /* Shooting Star Background Video Viewport Lock */
     .backvideo {
         width: 100vw;
         height: 100vh;
         object-fit: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1; 
+        pointer-events: none; 
     }
+
+    /* Badges Section */
     .badge1 {
-        width: 250px;
-        height: 100vh;
-        object-fit: cover;
-    }
-    .card video { width: 100%; }
-    .sectiontitle { left: 30%; }
-    .information { width: 100%; }
-    .achievment { width: 100%; }
-    .left { left: 90px; }
-    .card__article img {
-        padding: 0;
+        width: 100%;
+        height: auto;
         position: relative;
-        left: 40px;
+        top: 0; 
+        margin-top: -20px; 
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .contact-section { margin-top: 40px; }
+    .badge {
+        margin-bottom: 10px; 
+        font-size: 28px; 
+    }
+    .slider {
+        width: 100%;
+        height: 110px; 
+    }
+
+    /* About Me Heading & Info Cards Grid-to-Flex Fix (No Black Space) */
+    .information { 
+        width: 100%; 
+        margin-top: 20px; 
+    }
+    .sectiontitle { 
+        position: relative;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .information .sectiontitle {
+        margin-bottom: 30px; 
+        padding: 8px 20px; 
+    }
+    .infocard {
+        display: flex; 
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        height: auto; 
+        margin-top: 30px;
+    }
+    .card {
+        width: 100%; 
+        height: auto; 
+        min-height: 250px; 
+        padding: 20px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card:nth-child(3) {
+        height: auto; 
+    }
+    .card:nth-child(4) {
+        grid-column: auto; 
+    }
+    .card img, .card video {
+        width: 100%;
+        max-width: 280px; 
+        height: auto;
+        margin-top: 15px;
+        object-fit: contain;
+    }
+    .card h1 {
+        position: relative; 
+        bottom: 0;
+        left: 0;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .card p {
+        position: relative; 
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* MY SKILLS SECTION MOBILE FIX */
+    .skillsection {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .skillsection .sectiontitle {
+        font-size: 28px;
+        width: 100%;
+        text-align: center;
+        padding: 8px 20px;
+        margin-bottom: 30px;
+        position: relative;
+        top: 0;
+    }
+    .classbox {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 10px 0;
+    }
+    .skills-image {
+        width: 100%;
+        max-width: 280px;
+        position: relative;
+        right: 0; 
+        margin: 0 auto;
+        opacity: 0.5;
+    }
+    .coder {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        top: 0;
+        right: 0;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .codertitile {
+        font-size: 38px; 
+        margin-bottom: 10px;
+    }
+    .coder p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgb(160, 169, 177);
+    }
+    .coder p br {
+        display: none; 
+    }
+    .skillslider {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        margin-top: 30px;
+        height: 80px; 
+    }
+    .skillslider .lst .itm .imgs {
+        width: 50px; 
+        height: auto;
+    }
+
+    /* Achievements Section Mobile Fit */
+    .achievment { 
+        width: 100%; 
+    }
+    .left { 
+        position: relative;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        height: auto;
+    }
+    .right {
+        width: 100%;
+    }
+    .card__article {
+        width: 100%;
+    }
+    .card__article img {
+        width: 100%;
+        left: 0;
+    }
+
+    /* PROJECT SECTION MOBILE ALIGNMENT FIX */
+    .myprojectsection {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+    .myprojectsection .title {
+        font-size: 28px;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        margin-bottom: 30px;
+    }
+    .projectcard {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px; 
+        margin-top: 10px;
+        padding: 15px;
+        background: rgba(15, 15, 15, 0.4); 
+        border-radius: 15px;
+    }
+    .projectvediobox {
+        width: 100%;
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .projectvediobox video {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    .projectinfo {
+        width: 100%;
+        padding-left: 0; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+    .projectinfo h1 {
+        width: 100%;
+        font-size: 22px;
+        text-wrap: normal; 
+        margin-bottom: 8px;
+    }
+    .projectinfo p {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    .projectinfo button {
+        width: max-content;
+        padding: 10px 25px;
+    }
+    .hoversign {
+        display: none; 
+    }
+
+    /* ==========================================================
+       CONTACT SECTION MOBILE OVERLAP FIX (Yahan Pe)
+       ========================================================== */
+    .contact-section { 
+        display: flex;
+        flex-direction: column; /* Row layout hatakar vertical block stack kiya */
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin: 40px auto;
+        gap: 30px; /* Text aur form ke beech perfect padding set ki */
+        padding: 0 15px;
+    }
+    .contact-left {
+        width: 100%;
+        max-width: 100%;
+        text-align: center; /* Heading aur paragraph content centered set kiya */
+        padding-bottom: 0;
+    }
+    .contact-left h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+        position: relative;
+        bottom: 0; /* Purana pixel pull offset neutralize kiya */
+    }
+    .contact-left p {
+        font-size: 15px;
+        line-height: 1.5;
+        position: relative;
+        bottom: 0;
+    }
+    .contact-form {
+        width: 100%; /* Pure screen display container width capture ki */
+        max-width: 100%;
+        padding: 25px 20px; /* UI spaces tighten kiye */
+        border-radius: 15px;
+    }
+    .contact-form form {
+        width: 100%;
+        gap: 15px;
+    }
+    .name-row {
+        display: flex;
+        flex-direction: column; /* First/Last name side-by-side break hatakar straight vertical kiya */
+        gap: 15px;
+        width: 100%;
+    }
+    .input-group {
+        width: 100%;
+    }
+    .input-group label {
+        font-size: 13px;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .input-group input, .input-group textarea {
+        width: 100%;
+        border-radius: 12px; /* Smooth professional textboxes format scaling */
+        padding: 10px 14px;
+    }
+    .send-btn {
+        width: 100%; /* Action button click target fully expanded on mobile display */
+        padding: 12px;
+        font-size: 15px;
+    }
 }
