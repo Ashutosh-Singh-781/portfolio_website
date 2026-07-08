@@ -930,6 +930,9 @@ input:focus, textarea:focus {
 /* ==========================================================================
    FINAL FULLY ADJUSTED MOBILE RESPONSIVE MASTER BLOCK (768PX)
    ========================================================================== */
+/* ==========================================================================
+   FINAL MASTER FULLY ADJUSTED MOBILE RESPONSIVE BLOCK (768PX)
+   ========================================================================== */
 @media(max-width:768px) {
     /* Header & Contact Button Adjustments */
     header { 
@@ -991,19 +994,25 @@ input:focus, textarea:focus {
     /* 3D Model Flow Correction & Height Fix */
     .model3d {
         position: relative; 
-        width: 100%;
-        height: 480px; 
+        width: 100%; 
+        height: 380px; 
         display: block;
         margin: 10px auto 0 auto; 
-        opacity: 0.9;
-        scale: 1.15;
+        opacity: 0.95; /* Opacity thodi badhai taaki glow zyada natural lage */
+        scale: 1.15; 
         top: 0;
         right: 0;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 85%);
         order: -1; 
-        /* box-shadow: 0px -10px 30px rgba(223, 137, 8, 0.4),  /* Top shadow */
-                    /* 1px 15px 40px rgba(255, 123, 7, 0.505);   Bottom cut shadow for orange integration */
-        /* filter: drop-shadow(0px 10px 20px rgba(200, 104, 7, 0.91)); */ */
+        
+        /* Direct Watermark Crop */
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 85%); 
+
+        /* Neon Orange Glow Effects: Isse corners aur border ekdum natural aur space gradient ke sath blend lagenge */
+        box-shadow: 0px -10px 30px rgba(223, 137, 8, 0.4),  /* Top shadow */
+                    0px 15px 40px rgba(255, 29, 21, 0.5);   /* Bottom cut shadow for orange integration */
+        
+        /* Drop shadow filter specifically for 3D canvases rendering layer */
+        filter: drop-shadow(0px 10px 20px rgba(223, 137, 8, 0.6));
     }
 
     /* Buttons Tag-box Alignment */
@@ -1186,9 +1195,15 @@ input:focus, textarea:focus {
         height: auto;
     }
 
-    /* Achievements Section Mobile Fit */
+/* ==========================================================
+       ACHIEVEMENTS & CERTIFICATE SECTION MOBILE INTERACTION FIX
+       ========================================================== */
     .achievment { 
         width: 100%; 
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
     .left { 
         position: relative;
@@ -1196,16 +1211,82 @@ input:focus, textarea:focus {
         text-align: center;
         top: 0;
         height: auto;
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .left p {
+        font-size: 15px;
     }
     .right {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px; /* Cards ke beech ka vertical space spacing theek ki */
+        float: none;
     }
     .card__article {
         width: 100%;
+        position: relative;
+        overflow: hidden; /* Taaki extra pop-up background data bahar na tute */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 1rem;
     }
     .card__article img {
         width: 100%;
-        left: 0;
+        max-width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        position: relative;
+        left: 0; 
+    }
+
+    /* ─── YAHA SE SET KIYA INTERACTIVE POPUP BLOCK ─── */
+    .card__data {
+        width: calc(100% - 24px); /* Mobile display width bounds alignment */
+        background-color: rgba(20, 20, 20, 0.95); 
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.2rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        border-radius: 1rem;
+        
+        /* Default configuration: Yeh mobile me hidden rahega screen par */
+        position: absolute;
+        bottom: -100%; /* Image ke bilkul niche chipa rahega */
+        left: 12px;
+        opacity: 0;
+        
+        /* Smooth Slide up transition physics logic lock */
+        transition: bottom 0.4s ease, opacity 0.4s ease;
+        z-index: 5;
+    }
+
+    /* Jab mobile par user click/tap karega tab dynamic behavior trigger hoga */
+    .card__article:hover .card__data,
+    .card__article:active .card__data,
+    .card__article:focus .card__data {
+        bottom: 12px; /* Smoothly slide hokar image ke upar center lock ho jayega */
+        opacity: 1;   /* Fully visible transparent blur format overlay */
+    }
+
+    .card__title {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 0.5rem;
+    }
+    .card__discription {
+        color: #ccc;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    /* Disable animation logic loops breaking rendering flows */
+    .card__article:hover .card__data {
+        animation: none !important;
+        transform: none !important;
+    }
+    .card__article:hover {
+        animation: none !important;
     }
 
     /* PROJECT SECTION MOBILE ALIGNMENT FIX */
@@ -1275,30 +1356,28 @@ input:focus, textarea:focus {
         display: none; 
     }
 
-    /* ==========================================================
-       CONTACT SECTION MOBILE OVERLAP FIX (Yahan Pe)
-       ========================================================== */
+    /* CONTACT SECTION MOBILE OVERLAP FIX */
     .contact-section { 
         display: flex;
-        flex-direction: column; /* Row layout hatakar vertical block stack kiya */
+        flex-direction: column; 
         align-items: center;
         justify-content: flex-start;
         width: 100%;
         margin: 40px auto;
-        gap: 30px; /* Text aur form ke beech perfect padding set ki */
+        gap: 30px; 
         padding: 0 15px;
     }
     .contact-left {
         width: 100%;
         max-width: 100%;
-        text-align: center; /* Heading aur paragraph content centered set kiya */
+        text-align: center; 
         padding-bottom: 0;
     }
     .contact-left h1 {
         font-size: 32px;
         margin-bottom: 10px;
         position: relative;
-        bottom: 0; /* Purana pixel pull offset neutralize kiya */
+        bottom: 0; 
     }
     .contact-left p {
         font-size: 15px;
@@ -1307,9 +1386,9 @@ input:focus, textarea:focus {
         bottom: 0;
     }
     .contact-form {
-        width: 100%; /* Pure screen display container width capture ki */
+        width: 100%; 
         max-width: 100%;
-        padding: 25px 20px; /* UI spaces tighten kiye */
+        padding: 25px 20px; 
         border-radius: 15px;
     }
     .contact-form form {
@@ -1318,7 +1397,7 @@ input:focus, textarea:focus {
     }
     .name-row {
         display: flex;
-        flex-direction: column; /* First/Last name side-by-side break hatakar straight vertical kiya */
+        flex-direction: column; 
         gap: 15px;
         width: 100%;
     }
@@ -1332,11 +1411,11 @@ input:focus, textarea:focus {
     }
     .input-group input, .input-group textarea {
         width: 100%;
-        border-radius: 12px; /* Smooth professional textboxes format scaling */
+        border-radius: 12px; 
         padding: 10px 14px;
     }
     .send-btn {
-        width: 100%; /* Action button click target fully expanded on mobile display */
+        width: 100%; 
         padding: 12px;
         font-size: 15px;
     }
