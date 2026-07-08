@@ -1008,11 +1008,11 @@ input:focus, textarea:focus {
         clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 85%); 
 
         /* Neon Orange Glow Effects: Isse corners aur border ekdum natural aur space gradient ke sath blend lagenge */
-        box-shadow: 0px -10px 30px rgba(223, 137, 8, 0.4),  /* Top shadow */
-                    0px 15px 40px rgba(255, 29, 21, 0.5);   /* Bottom cut shadow for orange integration */
+        box-shadow: 0px -10px 30px rgb(247, 119, 0),  /* Top shadow */
+                    0px 15px 40px rgb(168, 87, 0);   /* Bottom cut shadow for orange integration */
         
         /* Drop shadow filter specifically for 3D canvases rendering layer */
-        filter: drop-shadow(0px 10px 20px rgba(223, 137, 8, 0.6));
+        filter: drop-shadow(0px 10px 20px rgb(246, 112, 2));
     }
 
     /* Buttons Tag-box Alignment */
