@@ -267,6 +267,83 @@ main {
     color: #222;
     transform: scale(1.1);
 }
+/* Container jo sabko ek single horizontal line me lock rakhega */
+.tag-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 150px;
+    gap: 40px;
+}
+
+/* About Me Button */
+.about {
+    margin-top: 0 !important; /* Purana margin-top: 90px hata diya */
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 50px;
+}
+
+/* Download CV Button */
+.downcv {
+    margin-left: 0 !important; /* Margin gap se control hoga */
+    height: 42px;
+    padding: 0 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Social icons layout */
+.hero-social-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto; /* Download CV aur LeetCode ke beech ka safe gap */
+    
+}
+
+.hero-social-links .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #111;
+    border: 1px solid #333;
+    color: #e7e7e7;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-social-links .social-icon .svg-icon {
+    width: 20px;
+    height: 20px;
+    fill: #e7e7e7;
+    transition: fill 0.3s ease;
+}
+
+.hero-social-links .social-icon:hover {
+    transform: translateY(-3px) scale(1.08);
+    border-color: #DF8908;
+    box-shadow: 0 0 15px rgba(223, 137, 8, 0.5);
+}
+
+.hero-social-links .social-icon:hover .svg-icon {
+    fill: #DF8908;
+}
 
 /* ==========================================================================
    5. BADGES INFINITE SLIDER SECTION (Clean Flow)
