@@ -93,14 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (downloadBtn) {
         downloadBtn.addEventListener('click', () => {
             // 1. Apni asli PDF file ka naam ya path yahan likho
-            const cvUrl = 'Ashutosh_Kumar_Singh_Resume.pdf'; 
+            const cvUrl = 'Ashutosh_CV.pdf'; 
             
             // 2. Dynamic temporary link create karke user ko trigger dena
             const tempLink = document.createElement('a');
             tempLink.href = cvUrl;
             
             // 3. Jis naam se file user ke computer me save hogi woh yahan set karo
-            tempLink.download = 'Ashutosh_Kumar_Singh_Resume.pdf'; 
+            tempLink.download = 'Ashutosh_CV.pdf'; 
             
             // 4. Background me link click karke element destroy karna
             document.body.appendChild(tempLink);
